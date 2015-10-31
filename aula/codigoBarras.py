@@ -23,11 +23,17 @@ def verificaUltD(somadigitos):
 
     return numVerificador
 
+print("========================================")
+print("VERIFICADOR DE CÓDIGO DE BARRAS EAN13")
+print("========================================\n\n")
+
 codigo = str(input("Digite O Código de Barras: "))
 
 #Validação Básica de quatidades de digitos e algumas letras
-if (len(codigo)>13):
+if (len(codigo)> 13):
     print("Quantidades de digitos acima de 13")
+elif (len(codigo) < 13 and len(codigo)> 0):
+    print("É Preciso Ter 13 Digitos")
 elif(len(codigo)<=0):
     print("Nenhum número digitado")
 elif ("a" in codigo or "b" in codigo or "c" in codigo or "d" in codigo or "e" in codigo or "f" in codigo):
