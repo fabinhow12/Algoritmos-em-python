@@ -169,11 +169,11 @@ def verifica_pais(codigo):
         pais = "Paraguai"
     elif codigo == 786:
         pais = "Equador"
-    elif 789 <= codigo == 790:
+    elif 789 <= codigo <= 790:
         pais = "Brasil"
-    elif 800 <= codigo == 839:
+    elif 800 <= codigo <= 839:
         pais = "Itália"
-    elif 840 <= codigo == 849:
+    elif 840 <= codigo <= 849:
         pais = "Espanha"
     elif codigo == 850:
         pais = "Cuba"
@@ -189,7 +189,7 @@ def verifica_pais(codigo):
         pais = "Coréia do Norte"
     elif codigo == 869:
         pais = "Turquia"
-    elif 870 <= int(codigo) <= 879:
+    elif 870 <= codigo <= 879:
         pais = "Holanda"
     elif codigo == 880:
         pais = "Coréia do Sul"
