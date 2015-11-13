@@ -122,6 +122,10 @@ if escolha == "1":
     if figura == "6":
         losango()
 
+    #Opção Inválida
+    if figura != "1" and figura != "2" and figura != "3" and figura != "4" and figura != "5" and figura != "6":
+        print("Opção inválida")
+
 # Calcula Volume
 print("")
 if escolha == "2":
@@ -148,6 +152,10 @@ if escolha == "2":
     # Volume Cílindro
     if figura == "4":
         cilindro()
+
+    #Opção Inválida
+    if figura != "1" and figura != "2" and figura != "3" and figura != "4":
+        print("Opção Inválida")
 
 if escolha != "1" and escolha != "2":
     print("Escolha Inválida")

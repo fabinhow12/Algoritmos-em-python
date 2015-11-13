@@ -1,4 +1,4 @@
-__author__ = 'Fábio Henrique E Walison Filipe'
+__author__ = 'Fábio Henrique'
 
 
 def verifica_celsius():
