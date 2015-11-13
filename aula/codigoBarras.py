@@ -241,10 +241,10 @@ print("VERIFICADOR DE CÓDIGO DE BARRAS EAN13")
 print("========================================")
 
 # Variável Que Recebe O Valor de Código de Barras
-codigo = str(input("Digite O Código de Barras: "))
+codigo = str(input("Digite o código de barras: "))
 
 # Variável QUe Recebe O PAÍS
-in_pais = str(input("Digite O País Onde O Produto Foi Feito: "))
+in_pais = str(input("Digite o país Onde o produto foi feito: "))
 
 
 # Validação Dos Valores Recebidos
@@ -254,13 +254,9 @@ if codigo.isdigit():
 
         # Variável Que Recebe O Valor Da Função Soma
         somadigitos = somaCodigo(codigo)
-        print("\n==============================================")
-        print("A Soma De Todos Os Digitos:", int(somadigitos))
 
         # Variavél Que Recebe O Número Verificador
         numVerificador = verificaUltD(somadigitos)
-        print("Número Para Verificar: ", int(numVerificador))
-        print("==============================================")
 
         #Lógica Para Saber os 3 Digitos Dos Países
         if codigo[0:1] == "0":
@@ -278,22 +274,22 @@ if codigo.isdigit():
             print("O Código de Barras é Válido")
 
             if paisve.lower() == in_pais.lower():
-                print("O Código do País é:", codigo[0:3]," E Foi Feito No(a): "+paisve)
+                print("O código do país é:", int(codigo[0:3]),"e foi feito no(a): "+paisve)
 
             else:
-                print("O Produto Não Foi Feito No(a) "+in_pais+", Foi Feito No(a) "+paisve)
+                print("O produto não foi feito No(a):",in_pais+", foi feito no(a): "+paisve)
 
-            print("O Código da Empresa é:", codigo[3:7])
-            print("O Código do Produto é:", codigo[7:12])
+            print("O Código da Empresa é:", int(codigo[3:7]))
+            print("O Código do Produto é:", int(codigo[7:12]))
             print("O Número de verificação é:", int(numVerificador))
-            print("==================================================================")
+            print("==============================================================")
         else:
             print("=======================================")
-            print("O Código de barras É Inválido")
+            print("O Código de barras é Inválido")
             print("=======================================")
 
     else:
-       print("É Preciso Ter 13 Digitos Para Verificação")
+       print("É preciso ter 13 digitos para verificação")
 
 else:
-    print("O Código Só Deve Ter Números")
+    print("O Código só deve ter números")
