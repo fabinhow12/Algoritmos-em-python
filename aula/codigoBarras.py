@@ -243,53 +243,51 @@ print("========================================")
 # Variável Que Recebe O Valor de Código de Barras
 codigo = str(input("Digite o código de barras: "))
 
+# Validação Dos Valores Recebidos
+while not codigo.isdigit():
+
+    print("Digite apenas números, tente novamente\n")
+    codigo = str(input("Digite o código de barras: "))
+
+while len(codigo) != 13:
+
+    print("Código inválido, verifique a quantidade de digitos e tente novamente\n")
+    codigo = str(input("Digite o código de barras: "))
+
+# Variável Que Recebe O Valor Da Função Soma
+somadigitos = somaCodigo(codigo)
+
+# Variavél Que Recebe O Número Verificador
+numVerificador = verificaUltD(somadigitos)
+
 # Variável QUe Recebe O PAÍS
 in_pais = str(input("Digite o país Onde o produto foi feito: "))
 
-
-# Validação Dos Valores Recebidos
-if codigo.isdigit():
-
-    if len(codigo) == 13:
-
-        # Variável Que Recebe O Valor Da Função Soma
-        somadigitos = somaCodigo(codigo)
-
-        # Variavél Que Recebe O Número Verificador
-        numVerificador = verificaUltD(somadigitos)
-
-        #Lógica Para Saber os 3 Digitos Dos Países
-        if codigo[0:1] == "0":
-            codigo_absoluto = codigo[2]
-        elif codigo[0] == "0":
-            codigo_absoluto = codigo[1:2]
-        else:
-            codigo_absoluto = codigo[0:3]
-
-        #Variável Para Verificação Do País
-        paisve = verifica_pais(int(codigo_absoluto))
-
-        if numVerificador == (int(codigo[12])):
-            print("\n==============================================================")
-            print("O Código de Barras é Válido")
-
-            if paisve.lower() == in_pais.lower():
-                print("O código do país é:", int(codigo[0:3]),"e foi feito no(a): "+paisve)
-
-            else:
-                print("O produto não foi feito No(a):",in_pais+", foi feito no(a): "+paisve)
-
-            print("O Código da Empresa é:", int(codigo[3:7]))
-            print("O Código do Produto é:", int(codigo[7:12]))
-            print("O Número de verificação é:", int(numVerificador))
-            print("==============================================================")
-        else:
-            print("=======================================")
-            print("O Código de barras é Inválido")
-            print("=======================================")
-
-    else:
-       print("É preciso ter 13 digitos para verificação")
-
+#Lógica Para Saber os 3 Digitos Dos Países
+if codigo[0:1] == "0":
+    codigo_absoluto = codigo[2]
+elif codigo[0] == "0":
+    codigo_absoluto = codigo[1:2]
 else:
-    print("O Código só deve ter números")
+    codigo_absoluto = codigo[0:3]
+
+    #Variável Para Verificação Do País
+    paisve = verifica_pais(int(codigo_absoluto))
+
+    if numVerificador == (int(codigo[12])):
+        print("\n==============================================================")
+        print("O Código de Barras é Válido")
+
+        if paisve.lower() == in_pais.lower():
+            print("O código do país é:", int(codigo[0:3]),"e foi feito no(a): "+paisve)
+
+        else:
+            print("O produto não foi feito No(a):",in_pais+", foi feito no(a): "+paisve)
+        print("O Código da Empresa é:", int(codigo[3:7]))
+        print("O Código do Produto é:", int(codigo[7:12]))
+        print("O Número de verificação é:", int(numVerificador))
+        print("==============================================================")
+    else:
+        print("=======================================")
+        print("O Código de barras é Inválido")
+        print("=======================================")
