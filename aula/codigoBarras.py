@@ -1,5 +1,6 @@
 dba__author__ = 'fabio'
 
+#Função Que Verifica de qual País é o Código
 def verifica_pais(codigo):
 
     #Variável Para Retornar Nome Do País
@@ -224,22 +225,14 @@ def somaCodigo(codigo):
 
     return somaDigitosTotal
 
-
 # Função que verifica o ultimo digito a partir da soma
 def verificaUltD(somadigitos):
-    getnum = 0
-    divisor = 10
-    x = 0
+
     for x in range(0, 10):
-        if (somadigitos + x) % divisor == 0:
-            getnum = (somadigitos + x) / divisor
-            # Multiplica o valor por 10 para fazer a subtração com as somas
-            getnum = getnum * 10
+        if (somadigitos + x) % 10 == 0:
+            numVerificador = x
             break
 
-    numVerificador = getnum
-
-    int(numVerificador)
     return numVerificador
 
 
@@ -249,6 +242,7 @@ print("========================================")
 
 # Variável Que Recebe O Valor de Código de Barras
 codigo = str(input("Digite O Código de Barras: "))
+
 # Variável QUe Recebe O PAÍS
 in_pais = str(input("Digite O País Onde O Produto Foi Feito: "))
 
@@ -258,19 +252,14 @@ if codigo.isdigit():
 
     if len(codigo) == 13:
 
-        # Variável Que Recebe O Valor Da Função
+        # Variável Que Recebe O Valor Da Função Soma
         somadigitos = somaCodigo(codigo)
         print("\n==============================================")
         print("A Soma De Todos Os Digitos:", int(somadigitos))
 
-        # Variavél Que Recebe O Valor Da Função
+        # Variavél Que Recebe O Número Verificador
         numVerificador = verificaUltD(somadigitos)
-        print("Número Múltiplo de 10:", int(numVerificador))
-
-        # Variavel que recebe O Valor da verificação
-        resultado = numVerificador - somadigitos
-        print("Número Para Verificar: ", int(resultado))
-
+        print("Número Para Verificar: ", int(numVerificador))
         print("==============================================")
 
         #Lógica Para Saber os 3 Digitos Dos Países
@@ -284,19 +273,19 @@ if codigo.isdigit():
         #Variável Para Verificação Do País
         paisve = verifica_pais(int(codigo_absoluto))
 
-        if resultado == (int(codigo[12])):
+        if numVerificador == (int(codigo[12])):
             print("\n==============================================================")
             print("O Código de Barras é Válido")
 
             if paisve.lower() == in_pais.lower():
-                print("O Código do País é:", codigo[0:3]," E Foi Feito No: "+paisve)
+                print("O Código do País é:", codigo[0:3]," E Foi Feito No(a): "+paisve)
 
             else:
                 print("O Produto Não Foi Feito No(a) "+in_pais+", Foi Feito No(a) "+paisve)
 
             print("O Código da Empresa é:", codigo[3:7])
             print("O Código do Produto é:", codigo[7:12])
-            print("O Número de verificação é:", int(resultado))
+            print("O Número de verificação é:", int(numVerificador))
             print("==================================================================")
         else:
             print("=======================================")
