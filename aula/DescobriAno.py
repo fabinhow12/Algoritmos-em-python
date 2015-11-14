@@ -17,6 +17,7 @@ print("")
 
 if int(ano) < 0:
     print("Não Tem Ano Negativo")
+
 elif len(ano) != 4:
     print("Digite Um Ano Válido")
 

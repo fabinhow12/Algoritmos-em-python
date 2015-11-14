@@ -19,11 +19,14 @@ def verifica_fare():
 
 def verifica_kelvin():
     tempKelvin = float(input("Digite A Temperatura Em Kelvin: "))
-    kelvinParaCel = tempKelvin + 273
-    print("A Temperatura em Celsius é %4.2f" % (kelvinParaCel))
-    kelvinParaFare = (9 * kelvinParaCel + 160) / 5
-    print("A Temperatura em Faranheit é %4.2f" % (kelvinParaFare))
 
+    if tempKelvin >= 0 :
+        kelvinParaCel = tempKelvin - 273
+        print("A Temperatura em Celsius é %4.2f" % (kelvinParaCel))
+        kelvinParaFare = (9 * kelvinParaCel + 160) / 5
+        print("A Temperatura em Faranheit é %4.2f" % (kelvinParaFare))
+    else:
+        print("Não existe temperatura menor que 0 Kelvin")
 
 print("Escalas Termométricas\n")
 
@@ -38,12 +41,15 @@ print("")
 # Celsius
 if escolha == "1":
     verifica_celsius()
+
 # Farenheit
 if escolha == "2":
     verifica_fare()
+
 # Kelvin
 if escolha == "3":
     verifica_kelvin()
+
 #Escolha Diferente Das 3
 if escolha != "1" and escolha != "2" and escolha != "3":
     print("Escolha Inválida")

@@ -40,7 +40,7 @@ def losango():
     D = float(input("Digite A Diagonal Maior: "))
     d = float(input("Digite A Diagonal Menor: "))
     areaLosangulo = (D * d) / 2
-    print("A Área Do Losangulo  é %4.2f Unidades De Área" % (areaLosangulo))
+    print("A área do losango é %4.2f unidades Dde area" % (areaLosangulo))
 
 
 # Funções Para Volume
@@ -93,7 +93,7 @@ if escolha == "1":
                        "3- Círculo\n"
                        "4- Triângulo\n"
                        "5- Paralelogramo\n"
-                       "6- Losangulo\n"
+                       "6- Losango\n"
                        "Digite Sua Opção: "))
 
     print("")

@@ -18,7 +18,6 @@ c = float(input("Digite O Valor De C: "))
 
 
 #Chama A Função
-
 if  CalculaDelta(float(a), float(b), float(c)) >= 0:
 
     delta = CalculaDelta(float(a), float(b), float(c))

@@ -28,8 +28,11 @@ print("Verificador de Número Primo\n\n")
 # Pega O Valor
 num = str(input("Digite o valor Para Verificar: "))
 
-if num.isdigit():
-    # Chama A Função
-    verificaPrimo(int(num))
-else:
+if num.isalpha():
     print("Só Pode Números E Não Letras")
+
+elif num.isspace():
+    print("Não Pode Ter Só Espaços , Digite Um Número")
+else:
+    #Chama A Função
+    verificaPrimo(int(num))
